@@ -2,10 +2,10 @@
 Task submission by Student Code: DAS004858 Task: Online E-Commerce Shopping Platform
 # E-Commerce Shopping Platform (Java Full Stack Internship)
 
-* **Student Name:** Parameshwaran
-* **Student Code:** DAS-JV-001
-* **Task ID:** 121
-* **Reference ID:** DAS004858
+* **Student Name:** Harini P
+* **Student Code:** DAS004858
+* **Task ID:** 1017
+* **Internship ID:** 1662
 * **Internship Provider:** Data Alcott Systems
 
 ---
