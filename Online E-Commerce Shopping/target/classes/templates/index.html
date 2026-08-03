@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head><title>JavaStore | Home</title><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-gray-50 text-gray-800">
+    <nav class="bg-indigo-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold">☕ JavaStore</a>
+            <div class="space-x-4 flex items-center">
+                <a href="/products" class="hover:text-indigo-200">Products</a>
+                <a sec:authorize="isAuthenticated()" href="/cart" class="hover:text-indigo-200">Cart 🛒</a>
+                <a sec:authorize="isAuthenticated()" href="/profile" class="hover:text-indigo-200">Profile</a>
+                <a sec:authorize="hasRole('ROLE_ADMIN')" href="/admin/dashboard" class="bg-yellow-400 text-gray-900 px-3 py-1 rounded font-bold">Admin</a>
+                <a sec:authorize="!isAuthenticated()" href="/login" class="bg-white text-indigo-600 px-4 py-2 rounded">Login</a>
+                <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post" class="inline">
+                    <button type="submit" class="bg-red-500 px-4 py-2 rounded">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <header class="bg-white py-20 text-center">
+        <div th:if="${param.orderSuccess}" class="bg-green-100 text-green-700 p-4 mb-4 rounded mx-auto max-w-md">Payment Successful! Order Confirmed.</div>
+        <h1 class="text-5xl font-extrabold mb-4">Welcome to JavaStore</h1>
+        <a href="/products" class="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-700">Shop Now</a>
+    </header>
+</body></html>

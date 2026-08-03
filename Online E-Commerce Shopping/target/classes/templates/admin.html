@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head><title>Admin Dashboard</title><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-gray-50">
+    <nav class="bg-gray-900 text-white p-4"><div class="container mx-auto flex justify-between"><a href="/" class="font-bold">⬅ Back to Store</a><span class="text-xl font-bold">Admin Dashboard</span></div></nav>
+    <div class="container mx-auto py-10 px-4">
+        
+        <!-- ADD PRODUCT FORM -->
+        <div class="bg-white p-6 rounded shadow mb-8">
+            <h2 class="text-xl font-bold mb-4">Add New Product</h2>
+            <form th:action="@{/admin/product/add}" method="post" class="flex gap-4 items-end">
+                <div><label class="block text-sm">Name</label><input type="text" name="name" class="border p-2 rounded" required></div>
+                <div><label class="block text-sm">Category</label><input type="text" name="category" class="border p-2 rounded" required></div>
+                <div><label class="block text-sm">Price</label><input type="number" step="0.01" name="price" class="border p-2 rounded w-24" required></div>
+                <div><label class="block text-sm">Stock</label><input type="number" name="stock" class="border p-2 rounded w-24" required></div>
+                <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded">Add</button>
+            </form>
+        </div>
+
+        <!-- MANAGE PRODUCTS TABLE -->
+        <div class="bg-white rounded shadow">
+            <table class="w-full text-left">
+                <tr class="bg-gray-100"><th class="p-4">ID</th><th class="p-4">Name</th><th class="p-4">Price</th><th class="p-4">Action</th></tr>
+                <tr th:each="product : ${products}" class="border-b">
+                    <td class="p-4" th:text="${product.id}">1</td>
+                    <td class="p-4" th:text="${product.name}">Name</td>
+                    <td class="p-4" th:text="'$' + ${product.price}">$0</td>
+                    <td class="p-4">
+                        <!-- DELETE PRODUCT -->
+                        <form th:action="@{/admin/product/delete}" method="post">
+                            <input type="hidden" name="id" th:value="${product.id}">
+                            <button type="submit" class="text-red-500 font-bold hover:underline">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body></html>

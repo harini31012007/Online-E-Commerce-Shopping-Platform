@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head><title>Payment Simulation</title><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-xl w-96 border-t-4 border-green-500">
+        <h2 class="text-2xl font-bold text-center mb-2">Secure Checkout</h2>
+        <p class="text-center text-gray-500 mb-6">Order Total: $<span th:text="${order.totalAmount}">0</span></p>
+        
+        <!-- PAYMENT SIMULATION FORM -->
+        <form th:action="@{/payment/process}" method="post" class="space-y-4">
+            <input type="hidden" name="orderId" th:value="${order.id}">
+            <div>
+                <label class="block text-sm font-medium">Card Number</label>
+                <input type="text" class="w-full p-2 border rounded" placeholder="1234 5678 9101 1121" required>
+            </div>
+            <div class="flex gap-4">
+                <div>
+                    <label class="block text-sm font-medium">Expiry</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="MM/YY" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium">CVV</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="123" required>
+                </div>
+            </div>
+            <button type="submit" class="w-full bg-green-500 text-white py-2 rounded font-bold hover:bg-green-600">Pay Now (Simulate Stripe)</button>
+        </form>
+    </div>
+</body></html>
