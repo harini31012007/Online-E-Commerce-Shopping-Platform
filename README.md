@@ -11,7 +11,7 @@ Task submission by Student Code: DAS004858 Task: Online E-Commerce Shopping Plat
 ---
 
 ## 📌 Project Overview
-This project is an E-Commerce Shopping Platform built as part of the Free Java Full Stack Internship program[cite: 1]. The application follows a robust MVC architecture, connecting a modern frontend user interface with a relational MySQL database via Spring Boot and Hibernate[cite: 1].
+This project is an E-Commerce Shopping Platform built as part of the Free Java Full Stack Internship program. The application follows a robust MVC architecture, connecting a modern frontend user interface with a relational MySQL database via Spring Boot and Hibernate.
 
 ---
 
@@ -24,11 +24,10 @@ This project is an E-Commerce Shopping Platform built as part of the Free Java F
 ---
 
 ## ✨ Core Features Implemented
-* **User Registration & Login (Spring Security):** Secure authentication system utilizing encrypted passwords via BCrypt before storage in the MySQL database[cite: 1].
-* **Product Catalog & Search:** Dynamic product display with a functional search bar that queries the database using Spring Data JPA to filter products by name or category[cite: 1].
-* **Shopping Cart Management:** Users can add products to their active cart, manage quantities, view dynamically calculated totals, and tie sessions securely to the database[cite: 1].
-* **Admin Inventory Controls:** Protected administrative routes for managing products and database records[cite: 1].
-
+* **User Registration & Login (Spring Security):** Secure authentication system utilizing encrypted passwords via BCrypt before storage in the MySQL database.
+* **Product Catalog & Search:** Dynamic product display with a functional search bar that queries the database using Spring Data JPA to filter products by name or category.
+* **Shopping Cart Management:** Users can add products to their active cart, manage quantities, view dynamically calculated totals, and tie sessions securely to the database.
+* **Admin Inventory Controls:** Protected administrative routes for managing products and database records.
 ---
 
 ## 🚀 Getting Started & Installation
